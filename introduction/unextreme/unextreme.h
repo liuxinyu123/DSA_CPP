@@ -3,8 +3,8 @@
 
 #include <vector>
 
-#define Max2(a,b) (return ((a) > (b))? (a):(b) )
-#define Min2(a,b) (return ((a) < (b))? (a):(b) )
+#define Max2(a,b) ( ((a) > (b))? (a):(b) )
+#define Min2(a,b) ( ((a) < (b))? (a):(b) )
 
 
 class Index
@@ -13,7 +13,7 @@ public:
 		Index(int val1 = 0,int val2 = 1,int val3 = 2):idx1(val1),idx2(val2),idx3(val3) 
 		{}//构造函数，默认取前三个
 
-private:
+public:
 		int idx1;
 		int idx2;
 		int idx3;

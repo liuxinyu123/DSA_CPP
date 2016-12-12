@@ -9,6 +9,7 @@ int main(int argc,char **argv)
 		iVec.push_back(i);
 
 	UnExtreme<int> uEx(iVec);
+		
 	std::cout << "The unextreme element is : " << uEx.UnExtremeElement() << std::endl;
 
 	return 0;
