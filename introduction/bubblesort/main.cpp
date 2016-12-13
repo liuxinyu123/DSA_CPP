@@ -42,5 +42,21 @@ int main(int argc,char **argv)
 	bub3.BubbleSort2();
 	bub3.Print();
 	
+	std::vector<double> fVec;
+	fVec.push_back(43.23);
+	fVec.push_back(-43.23);
+	fVec.push_back(423.23);
+	fVec.push_back(2.3);
+	fVec.push_back(5.4);
+	fVec.push_back(-32.3);
+	fVec.push_back(0);
+	fVec.push_back(2.34);
+	fVec.push_back(534.4);
+
+	Bubble<double> bub4(fVec);
+	bub4.Print();
+	bub4.BubbleSort2();
+	bub4.Print();
+
 	return 0;
 }
