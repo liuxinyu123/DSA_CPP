@@ -10,6 +10,9 @@ class Bubble
 public:
 		Bubble(std::vector<T> &v);
 		void BubbleSort();
+		void BubbleSort1A();
+		void BubbleSort1B();
+		void BubbleSort2();
 		void Print();
 private:
 		void Swap(T &a,T &b);
