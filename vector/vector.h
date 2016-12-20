@@ -16,11 +16,15 @@ public:
 		~Vector() {delete [] array_;}//析构函数
 		void Print();//打印输出
 		int Size() {return size_;}//求大小
-		
-
+		T& operator[](Rank r) const {return array_[r];}//重载[]操作符
+		T Get(Rank r) const {return array_[r];}//访问元素
+		Rank Insert(Rank r,const T &elem);//插入操作
+		int Remove(Rank lo,Rank hi);//区间删除	
+		T Delete(Rank r);//删除操作
+		Rank Find(const T &elem,Rank lo,Rank hi);//元素查找
 private:
 		void CopyFrom(const T *arr,Rank lo,Rank hi);
-
+		void Expand();
 private:
 		T *array_;
 		Rank size_;
