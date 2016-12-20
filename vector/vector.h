@@ -22,6 +22,8 @@ public:
 		int Remove(Rank lo,Rank hi);//区间删除	
 		T Delete(Rank r);//删除操作
 		Rank Find(const T &elem,Rank lo,Rank hi);//元素查找
+		void PushBack(const T &elem);//元素追加
+		T PopBack();//元素尾部删除
 private:
 		void CopyFrom(const T *arr,Rank lo,Rank hi);
 		void Expand();
