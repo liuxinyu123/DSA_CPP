@@ -2,16 +2,16 @@
 #define _VECTOR_FIND_H_
 
 template<typename T>
-Rank Vector<T>::Find(const T &elem,Rank lo,Rank hi)
+Rank Vector<T>::Find(const T &elem,Rank lo,Rank hi) const
 {
-	int i = hi;
-	for(; i > lo; --i)
+	int i = hi - 1;
+	for(; i >= lo; --i)
 	{
-		if(elem == array_[i - 1])
+		if(elem == array_[i])
 			break;
 	}
 
-	return (i - 1);
+	return i;
 }
 
 #endif

@@ -10,5 +10,9 @@
 #include "./header/vector_find.h"
 #include "./header/vector_pushback.h"
 #include "./header/vector_popback.h"
-
+#include "./header/vector_deduplicate.h"
+#include "./header/vector_shrunk.h"
+#include "./header/vector_replace.h"
+#include "./header/vector_traverse.h"
+#include "./header/vector_increase.h"
 #endif

@@ -4,7 +4,7 @@
 #include <iostream>
 
 template<typename T>
-void Vector<T>::Print()
+void Vector<T>::Print() const
 {
 	for(int i = 0; i < size_; ++i)
 		std::cout << array_[i] << " " ;

@@ -12,6 +12,7 @@ int Vector<T>::Remove(Rank lo,Rank hi)
 
 	size_ = lo;
 
+	Shrunk();
 	return hi - lo;
 }
 
