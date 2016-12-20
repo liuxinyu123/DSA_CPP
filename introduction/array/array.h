@@ -9,11 +9,11 @@ public:
 		Array() {}
 		Array(std::vector<T> &v):vec_(v) {}
 		void Inverse();
-		void Inverse(int lo,int hi);
+		void Inverse(int lo,int hi);//	Recursive
 		void Print();
 		int Size() {return vec_.size();}
-		int Sum(int n);
-		int Sum(int lo,int hi);
+		int Sum(int n);//linear recurse
+		int Sum(int lo,int hi);//bin-division recurse
 
 private:
 		static void Swap(T &a,T &b);
