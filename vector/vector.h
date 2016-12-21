@@ -26,16 +26,23 @@ public:
 		Rank Find(const T &elem,Rank lo,Rank hi) const;//元素查找
 		void PushBack(const T &elem);//元素追加
 		T PopBack();//元素尾部删除
-		int Deduplicate();//去除重复的元素
+		int Deduplicate();//去除重复的元素,返回重复个数
 		int Capacity() const {return capacity_;}//获取容量
 		void Replace(Rank r,const T &elem);//元素替换
 		template<typename VST>
 		void Traverse(VST &visit);
 		static void VectorIncrease(Vector<T> &v);
+		int Disorder() const;//返回逆序对个数
+		void Sort();//排序
+		int Uniquify();//有序向量的去重,返回重复个数
+		int Uniquify1();//去重高效算法
+		Rank Search(const T &elem,Rank lo,Rank hi) const;//有序向量的查找
 private:
-		void CopyFrom(const T *arr,Rank lo,Rank hi);
-		void Expand();
-		void Shrunk();
+		void CopyFrom(const T *arr,Rank lo,Rank hi);//拷贝
+		void Expand();//扩容
+		void Shrunk();//缩容
+		void BubbleSort();//冒泡排序
+		static void Swap(T &a,T &b) {T t = a;a = b; b = t;}
 private:
 		T *array_;
 		Rank size_;

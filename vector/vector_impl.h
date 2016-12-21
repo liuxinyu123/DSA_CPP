@@ -15,4 +15,11 @@
 #include "./header/vector_replace.h"
 #include "./header/vector_traverse.h"
 #include "./header/vector_increase.h"
+#include "./header/vector_sort.h"
+#include "./header/vector_bubblesort.h"
+#include "./header/vector_disorder.h"
+#include "./header/vector_uniquify.h"
+#include "./header/vector_uniquify1.h"
+#include "./header/vector_search.h"
+#include "./header/.vector_binsearch"
 #endif

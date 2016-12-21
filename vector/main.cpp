@@ -46,7 +46,24 @@ int main(int argc,char **argv)
 	iVec3.Print();
 	
 	//VectorIncrease(iVec3);
-	std::cout << "After Traverse,iVec3 is: " << std::endl;
+	////std::cout << "After Traverse,iVec3 is: " << std::endl;
+	//iVec3.Print();
+	std::cout << "The number of iVec3 inverse-pair is : " << iVec3.Disorder() << std::endl;
+	int sz = iVec3.Size();
+	for(int i = 0; i < sz; ++i)
+	{
+		iVec3.PushBack(iVec3.Get(i));
+		iVec3.PushBack(iVec3.Get(i));
+		iVec3.PushBack(iVec3.Get(i));
+	}
+	std::cout << "iVec3 is : " << std::endl;
 	iVec3.Print();
+	iVec3.Sort();
+	std::cout << "After sort,iVec3 is: " << std::endl;
+	iVec3.Print();
+	iVec3.Uniquify1();
+	std::cout << "After Uniquify,iVec3 is: " << std::endl;
+	iVec3.Print();
+
 	return 0;
 }
