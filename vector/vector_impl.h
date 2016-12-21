@@ -21,5 +21,9 @@
 #include "./header/vector_uniquify.h"
 #include "./header/vector_uniquify1.h"
 #include "./header/vector_search.h"
-#include "./header/.vector_binsearch"
+#include "./header/vector_binsearch1.h"
+#include "./header/vector_binsearch2.h"
+#include "./header/vector_binsearch.h"
+#include "./header/increase.h"
+#include "./header/vector_bubble.h"
 #endif

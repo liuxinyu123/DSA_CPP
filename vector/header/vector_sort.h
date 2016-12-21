@@ -7,4 +7,9 @@ void Vector<T>::Sort()
 	BubbleSort();
 }
 
+template<typename T>
+void Vector<T>::Sort(Rank lo,Rank hi)
+{
+	BubbleSort(lo,hi);
+}
 #endif

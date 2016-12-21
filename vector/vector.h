@@ -34,6 +34,7 @@ public:
 		static void VectorIncrease(Vector<T> &v);
 		int Disorder() const;//返回逆序对个数
 		void Sort();//排序
+		void Sort(Rank lo,Rank hi);//排序的重载版本
 		int Uniquify();//有序向量的去重,返回重复个数
 		int Uniquify1();//去重高效算法
 		Rank Search(const T &elem,Rank lo,Rank hi) const;//有序向量的查找
@@ -42,7 +43,12 @@ private:
 		void Expand();//扩容
 		void Shrunk();//缩容
 		void BubbleSort();//冒泡排序
-		static void Swap(T &a,T &b) {T t = a;a = b; b = t;}
+		void BubbleSort(Rank lo,Rank hi);//冒泡排序的重载版本
+		bool Bubble(Rank lo,Rank hi);
+		static void Swap(T &a,T &b) {T t = a;a = b; b = t;}//交换
+		Rank BinSearch(const T &elem,Rank lo,Rank hi) const;//二分查找,失败返回-1，不平衡
+		Rank BinSearch1(const T &elem,Rank lo,Rank hi) const;//二分查找的另一个版本，平衡
+		Rank BinSearch2(const T &elem,Rank lo,Rank hi) const;//二分查找有一个版本，失败返回不大于elem的最大者
 private:
 		T *array_;
 		Rank size_;

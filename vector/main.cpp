@@ -58,12 +58,13 @@ int main(int argc,char **argv)
 	}
 	std::cout << "iVec3 is : " << std::endl;
 	iVec3.Print();
-	iVec3.Sort();
+	iVec3.Sort(0,iVec3.Size());
 	std::cout << "After sort,iVec3 is: " << std::endl;
 	iVec3.Print();
 	iVec3.Uniquify1();
 	std::cout << "After Uniquify,iVec3 is: " << std::endl;
 	iVec3.Print();
-
+	
+	std::cout << "In iVec3, " << iVec3[4] << " is in Rank " << iVec3.Search(iVec3[4] + 1,0,iVec3.Size())  << std::endl;
 	return 0;
 }

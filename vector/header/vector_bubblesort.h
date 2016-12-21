@@ -14,4 +14,10 @@ void Vector<T>::BubbleSort()
 	}
 }
 
+template<typename T>
+void Vector<T>::BubbleSort(Rank lo,Rank hi)
+{
+	while(!Bubble(lo,hi--));
+}
+
 #endif
