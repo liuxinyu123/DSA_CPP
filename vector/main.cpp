@@ -58,7 +58,7 @@ int main(int argc,char **argv)
 	}
 	std::cout << "iVec3 is : " << std::endl;
 	iVec3.Print();
-	iVec3.Sort(0,iVec3.Size());
+	iVec3.Sort1();
 	std::cout << "After sort,iVec3 is: " << std::endl;
 	iVec3.Print();
 	iVec3.Uniquify1();

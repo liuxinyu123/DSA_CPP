@@ -10,6 +10,6 @@ void Vector<T>::Sort()
 template<typename T>
 void Vector<T>::Sort(Rank lo,Rank hi)
 {
-	BubbleSort(lo,hi);
+	BubbleSort1(lo,hi);
 }
 #endif

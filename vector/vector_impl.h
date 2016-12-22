@@ -25,5 +25,9 @@
 #include "./header/vector_binsearch2.h"
 #include "./header/vector_binsearch.h"
 #include "./header/increase.h"
+#include "./header/vector_bubblesort1.h"
 #include "./header/vector_bubble.h"
+#include "./header/vector_sort1.h"
+#include "./header/vector_bubble1.h"
+#include "./header/vector_mergesort.h"
 #endif
