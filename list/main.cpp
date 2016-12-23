@@ -3,8 +3,12 @@
 
 int main(int argc,char **argv)
 {
-	List l;
+	List<int> iList;
+	
+	iList.InsertAsLast(23);
+	//iList.InsertAsLast(233);
+	//iList.InsertAsLast(44);
+	//iList.Print();
 
-
-	return 0;	
+	return 0;
 }

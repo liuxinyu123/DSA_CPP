@@ -1,10 +1,10 @@
-#ifndef _LIST_CONSTRUCTION_H_
-#define _LIST_CONSTRUCTION_H_
+#ifndef _LIST_CONSTRUCTOR_H_
+#define _LIST_CONSTRUCTOR_H_
 
 template<typename T>
 List<T>::List(const List &l)
 {
-
+	
 }
 
 template<typename T>

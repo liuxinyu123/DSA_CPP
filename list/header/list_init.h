@@ -4,12 +4,12 @@
 template <typename T>
 void List<T>::Init()
 {
-	Position(T) h = new ListNode;
-	Position(T) t = new ListNode;
-	h -> succ_ = t;
-	h -> pred_ = nullptr;
-	t -> pred_ = h;
-	t -> succ_ = nullptr;
+	Position(T) header_ = new ListNode<T>;
+	Position(T) trailer_ = new ListNode<T>;
+	header_ -> succ_ = trailer_;
+	header_ -> pred_ = nullptr;
+	trailer_ -> pred_ = header_;
+	trailer_ -> succ_ = nullptr;
 
 	size_ = 0;
 }
