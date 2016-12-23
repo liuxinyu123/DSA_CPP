@@ -2,11 +2,11 @@
 #define _SINGLELIST_BACK_H_
 
 template<typename T>
-Position(T) SingleList<T>::Back() const
+Position(T) SingleList<T>::End() const
 {
 	if(Empty())
 		return nullptr;
-	Position(T) p = Front();
+	Position(T) p = Begin();
 	while(p -> succ_)
 		p = p -> succ_;
 

@@ -8,7 +8,7 @@ void SingleList<T>::Print()
 {
 	if(!Empty())
 	{
-		Position(T) p = Front();
+		Position(T) p = Begin();
 		while(p)
 		{
 			std::cout << p -> data_ << " " ;

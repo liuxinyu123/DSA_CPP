@@ -4,7 +4,7 @@
 template<typename T>
 Position(T) SingleList<T>::NodeBefore(Position(T) p) const
 {
-	Position(T) q = Front();
+	Position(T) q = Begin();
 
 	while(q && (q -> succ_ != p))
 		q = q -> succ_;

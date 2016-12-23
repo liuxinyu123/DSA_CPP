@@ -4,8 +4,16 @@
 template<typename T>
 void SingleList<T>::PushFront(const T &elem)
 {
-	Position(T) front = Front();
-	Position(T) p = new ListNode<T>(elem,front);
+	if(Empty())
+	{
+		Position(T) p = new ListNode<T>(elem,nullptr);
+		header_ -> succ_ = p;
+		++size_;
+		return;
+	}
+
+	Position(T) b = Begin();
+	Position(T) p = new ListNode<T>(elem,b);
 	header_ -> succ_ = p;
 	++size_;
 }
@@ -21,8 +29,8 @@ void SingleList<T>::PushBack(const T &elem)
 		return;
 	}
 
-	Position(T) back = Back();
-	back -> succ_ = p;
+	Position(T) e = End();
+	e -> succ_ = p;
 	++size_;
 }
 

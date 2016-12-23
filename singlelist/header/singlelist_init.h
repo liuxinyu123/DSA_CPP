@@ -6,6 +6,7 @@ void SingleList<T>::Init()
 {
 	header_ = new ListNode<T>;
 	header_ -> succ_ = nullptr;	
+	size_ = 0;
 }
 
 #endif

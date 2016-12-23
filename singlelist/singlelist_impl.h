@@ -11,6 +11,10 @@
 #include "./header/singlelist_nodebefore.h"
 #include "./header/singlelist_push.h"
 #include "./header/singlelist_back.h"
+#include "./header/singlelist_find.h"
+#include "./header/singlelist_insert.h"
+#include "./header/singlelist_operator.h"
+#include "./header/singlelist_copynodes.h"
 
 
 #endif

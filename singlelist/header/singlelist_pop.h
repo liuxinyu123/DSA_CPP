@@ -6,10 +6,10 @@ T SingleList<T>::PopFront()
 {
 	if(!Empty())
 	{
-		Position(T) front = Front();
-		T tmp = front -> data_;
-		header_ -> succ_ = front -> succ_;
-		delete front;
+		Position(T) b = Begin();
+		T tmp = b -> data_;
+		header_ -> succ_ = b -> succ_;
+		delete b;
 		--size_;
 
 		return tmp;
@@ -22,11 +22,11 @@ T SingleList<T>::PopBack()
 {
 	if(!Empty())
 	{
-		Position(T) back = Back();
-		T tmp = back -> data_;
-		Position(T) beforeBack = NodeBefore(back);
-		beforeBack -> succ_ = back -> succ_;
-		delete back;
+		Position(T) e = End();
+		T tmp = e -> data_;
+		Position(T) beforeBack = NodeBefore(e);
+		beforeBack -> succ_ = e -> succ_;
+		delete e;
 		--size_;
 
 		return tmp;

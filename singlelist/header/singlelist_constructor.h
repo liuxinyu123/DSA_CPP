@@ -10,11 +10,14 @@ SingleList<T>::SingleList()
 template<typename T>
 SingleList<T>::SingleList(const SingleList &l)
 {
+	CopyNodes(l.Begin(),l.Size());
 }
 
 template<typename T>
-SingleList<T>::SingleList(const SingleList &l,Position(T) p,int n)
+SingleList<T>::SingleList(Position(T) p,int n)
 {
+	CopyNodes(p,n);
 }
+
 #endif
 
