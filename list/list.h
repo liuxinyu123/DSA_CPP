@@ -15,18 +15,6 @@ public:
 		List(Position(T) p,int n);//从节点p开始的n个
 		~List();//析构	
 		
-		Position(T) First() const //取首
-		{
-			if(Empty())
-				return trailer_;
-			return header_ -> succ_;
-		}
-		Position(T) Last() const//取末
-		{
-			if(Empty())
-				return header_;
-			return trailer_ -> pred_;
-		}
 		void Print() const ;//打印到屏幕
 		T operator[](Rank r) const;//巡秩访问
 		int Size() const {return size_;}//规模
@@ -42,6 +30,18 @@ public:
 private:
 		void Init();//初始化
 		int Clear();//清空节点
+		Position(T) First() const //取首
+		{
+			if(Empty())
+				return trailer_;
+			return header_ -> succ_;
+		}
+		Position(T) Last() const//取末
+		{
+			if(Empty())
+				return header_;
+			return trailer_ -> pred_;
+		}
 private:
 		
 private:
