@@ -18,6 +18,8 @@ public:
 				_elem [i] = e;
 		}
 		Vector (const Vector<T> &v);
+		Vector (const T *arr, int lo, int hi);
+
 		Vector& operator= (const Vector<T> &v);
 		T& operator[] (const Rank r)
 		{
@@ -33,11 +35,29 @@ public:
 			return _size;
 		}
 		void copyFrom (const T* arr, Rank lo, Rank hi);
-		void insert (Rank r, T &e);
-			
-		
+		void insert (Rank r, const T &e);
+		bool isEmpty () const
+		{
+			return _size == 0;
+		}
+		T get (Rank r) const
+		{
+			check (r, "passed the max rank");
+			return _elem[r];
+		}	
+		void put (Rank r, const T &e)
+		{
+			check (r, "passed the max rank");
+			_elem[r] = e;
+		}	
 private:
 		void check (Rank r, const std::string &s) const;
+		void expand ();
+		bool isFull () const
+		{
+			return _size == _capacity;
+		}
+		void shrink ();
 private:
 		int _capacity;
 		Rank _size;
