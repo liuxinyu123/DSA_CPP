@@ -51,6 +51,7 @@ public:
 			_elem[r] = e;
 		}	
 		void unsort (Rank lo, Rank hi);
+		Rank find (const T &e, Rank lo, Rank hi) const;
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();

@@ -93,4 +93,14 @@ void Vector<T>::unsort (Rank lo, Rank hi)
 	}
 }
 
+template<typename T>
+Rank Vector<T>::find (const T &e, Rank lo, Rank hi) const
+{
+	for (Rank i = hi; i > 0; --i)
+	{
+		if (e == _elem[i - 1])
+			return i - 1;
+	}
+	return -1;
+}
 #endif

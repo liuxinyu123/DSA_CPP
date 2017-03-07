@@ -49,6 +49,7 @@ void test_vector ()
 	for (int i = 0; i < strVec.size (); ++i)
 		cout << strVec[i] << " ";
 	cout << endl;
+	cout << strVec.find ("wo", 0, strVec.size ()) << endl;
 
 	strVec.unsort (0, strVec.size ());
 	for (int i = 0; i < strVec.size (); ++i)
