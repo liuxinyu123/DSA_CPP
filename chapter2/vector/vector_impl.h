@@ -60,12 +60,17 @@ void Vector<T>::expand ()
 }
 
 template<typename T>
-void Vector<T>::insert (Rank r, const T &e)
+Rank Vector<T>::insert (Rank r, const T &e)
 {
 	check (r, "rank passed!");
 	if (isFull ())
 		expand ();
+	for (Rank i = _size; i > r; --i)
+		_elem[i] = _elem[i - 1];
+	_elem[r] = e;
+	++_size;
 
+	return r;
 }
 
 template<typename T>
@@ -102,5 +107,21 @@ Rank Vector<T>::find (const T &e, Rank lo, Rank hi) const
 			return i - 1;
 	}
 	return -1;
+}
+
+template<typename T>
+void Vector<T>::pushBack (const T &e)
+{
+	if (isFull ())
+		expand ();
+	_elem[_size++] = e;
+}
+
+template<typename T>
+T Vector<T>::popBack ()
+{
+	if (isEmpty ())
+		throw std::out_of_range ("underflow");
+	return _elem[_size--];
 }
 #endif

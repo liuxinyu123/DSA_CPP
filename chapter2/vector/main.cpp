@@ -49,6 +49,7 @@ void test_vector ()
 	for (int i = 0; i < strVec.size (); ++i)
 		cout << strVec[i] << " ";
 	cout << endl;
+
 	cout << strVec.find ("wo", 0, strVec.size ()) << endl;
 
 	strVec.unsort (0, strVec.size ());
@@ -56,6 +57,22 @@ void test_vector ()
 		cout << strVec[i] << " ";
 	cout << endl;
 		
+	strVec.insert (3, "sorry");
+	strVec.insert (4, "ok");
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+	cout << "The size of strVec is " << strVec.size () << endl;
+
+	strVec.pushBack ("fuck");
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+
+	strVec.popBack ();
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
 
 	
 	

@@ -35,7 +35,7 @@ public:
 			return _size;
 		}
 		void copyFrom (const T* arr, Rank lo, Rank hi);
-		void insert (Rank r, const T &e);
+		Rank insert (Rank r, const T &e);
 		bool isEmpty () const
 		{
 			return _size == 0;
@@ -52,6 +52,8 @@ public:
 		}	
 		void unsort (Rank lo, Rank hi);
 		Rank find (const T &e, Rank lo, Rank hi) const;
+		void pushBack (const T &e);
+		T popBack ();
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();
