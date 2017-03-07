@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include "vector.h"
 #include "increase.h"
 
@@ -8,10 +9,14 @@ using std::endl;
 using std::string;
 
 void test_vector ();
+void test_sorted_vector ();
 
 int main (int argc, char *argv[])
 {
+	cout << "test_vector:" << endl;
 	test_vector ();
+	cout << "test_sorted_vector:" << endl;
+	test_sorted_vector ();
 
 	return 0;
 
@@ -129,5 +134,24 @@ void test_vector ()
 	for (int i = 0; i < iVec4.size (); ++i)
 		cout << iVec4[i] << " ";
 	cout << endl;
+
+}
+
+void test_sorted_vector ()
+{
+	Vector<int> iVec1;
+
+	for (int i = 20; i > 0; --i)
+		iVec1.pushBack (i);
+	
+	std::for_each (iVec1.begin (), iVec1.end (), [] (const int e) {cout << e << " ";});
+	cout << endl;
+
+	cout << "The number of disordered is " << iVec1.disordered () << endl;
+
+	iVec1.sort ();
+	std::for_each (iVec1.begin (), iVec1.end (), [] (const int e) {cout << e << " ";});
+	cout << endl;
+	cout << "The number of disordered is " << iVec1.disordered () << endl;
 
 }

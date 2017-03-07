@@ -191,4 +191,37 @@ void Vector<T>::traverse (VST &visit)
 		visit (_elem[i]);
 }
 
+template<typename T>
+int Vector<T>::disordered () const
+{
+	int ret = 0;
+	for (Rank i = 1; i < _size; ++i)
+	{
+		if (_elem[i - 1] > _elem[i])
+			++ret;
+	}
+
+	return ret;
+}
+
+template<typename T>
+void Vector<T>::sort ()
+{
+	bool sorted = false;
+	Rank sz = _size;
+	using std::swap;
+	while (!sorted)
+	{
+		sorted = true;
+		for (Rank i = 0; i < sz - 1; ++i)
+		{
+			if (_elem[i] > _elem[i + 1] )
+				swap (_elem[i], _elem[i + 1]);
+			sorted = false;			
+		}
+		--sz;
+	
+	}
+}
+
 #endif

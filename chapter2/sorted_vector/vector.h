@@ -61,6 +61,16 @@ public:
 		T popFront ();
 		template<typename VST>
 		void traverse (VST &visit);
+		int disordered () const;
+		T* begin () const
+		{
+			return _elem;
+		}
+		T* end () const
+		{
+			return _elem+_size;
+		}
+		void sort ();
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();
