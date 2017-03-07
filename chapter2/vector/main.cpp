@@ -74,6 +74,16 @@ void test_vector ()
 		cout << strVec[i] << " ";
 	cout << endl;
 
-	
+	strVec.remove (0, 3);
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+	cout << "The size of strVec is " << strVec.size () << endl;
+
+	strVec.remove (0);
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+	cout << "The size of strVec is " << strVec.size () << endl;
 	
 }

@@ -124,4 +124,25 @@ T Vector<T>::popBack ()
 		throw std::out_of_range ("underflow");
 	return _elem[_size--];
 }
+
+template<typename T>
+void Vector<T>::remove (Rank lo, Rank hi)
+{
+	check (hi, "passed the max index");
+	
+	if (lo == hi)
+		return;
+
+	for (Rank i = hi; i < _size; ++i)
+		_elem[lo++] = _elem[hi++];
+	_size = _size - (hi - lo);
+	shrink ();
+}
+
+template<typename T>
+void Vector<T>::remove (Rank r) 
+{
+	check (r, "passed the max index");
+	remove (r, r+1);
+}
 #endif

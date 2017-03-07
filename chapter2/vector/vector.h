@@ -31,7 +31,7 @@ public:
 			delete [] _elem;
 		}
 		Rank size () const
-		{
+		{	
 			return _size;
 		}
 		void copyFrom (const T* arr, Rank lo, Rank hi);
@@ -54,6 +54,8 @@ public:
 		Rank find (const T &e, Rank lo, Rank hi) const;
 		void pushBack (const T &e);
 		T popBack ();
+		void remove (Rank lo, Rank hi);//区间删除
+		void remove (Rank r);//删除秩为r的元素
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();
