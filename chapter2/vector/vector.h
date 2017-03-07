@@ -56,6 +56,9 @@ public:
 		T popBack ();
 		void remove (Rank lo, Rank hi);//区间删除
 		void remove (Rank r);//删除秩为r的元素
+		int deduplicate ();
+		void pushFront (const T &e);
+		T popFront ();
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();

@@ -145,4 +145,43 @@ void Vector<T>::remove (Rank r)
 	check (r, "passed the max index");
 	remove (r, r+1);
 }
+
+template<typename T>
+int Vector<T>::deduplicate ()
+{
+	Rank old_size = _size;
+
+	Rank i = 1;
+	while (i < _size)
+	{
+		if (find (_elem[i], 0, i) < 0)
+			++i;
+		else
+			remove (i);
+	}
+	return old_size - _size;
+}
+
+template<typename T>
+void Vector<T>::pushFront (const T &e)
+{
+	if (isFull ())
+		expand ();
+	for (Rank i = _size; i > 0; --i)
+		_elem[i] = _elem[i - 1];
+  	
+   	_elem[0] = e;
+	++_size;	   
+}
+
+template<typename T>
+T Vector<T>::popFront ()
+{
+	if (isEmpty ())
+		throw std::out_of_range ("underflow");
+	T ret = _elem[0];
+	remove (0, 1);
+	return ret;
+}
+
 #endif

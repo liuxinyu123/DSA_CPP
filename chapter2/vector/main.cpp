@@ -86,4 +86,32 @@ void test_vector ()
 	cout << endl;
 	cout << "The size of strVec is " << strVec.size () << endl;
 	
+	strVec.pushBack ("ok");
+	strVec.pushBack ("ok");
+	strVec.pushBack ("sorry");
+	strVec.pushBack ("world");
+	strVec.pushBack ("what");
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+	cout << "The size of strVec is " << strVec.size () << endl;
+
+	strVec.deduplicate ();		
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+	cout << "The size of strVec is " << strVec.size () << endl;
+	
+	strVec.pushFront ("front");
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+	cout << "The size of strVec is " << strVec.size () << endl;
+
+	strVec.popFront ();
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+	cout << "The size of strVec is " << strVec.size () << endl;
+
 }
