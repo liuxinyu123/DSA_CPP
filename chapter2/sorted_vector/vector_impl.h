@@ -128,7 +128,7 @@ T Vector<T>::popBack ()
 template<typename T>
 void Vector<T>::remove (Rank lo, Rank hi)
 {
-	check (hi, "passed the max index");
+	check (hi - 1, "passed the max index");
 	
 	if (lo == hi)
 		return;
@@ -224,4 +224,19 @@ void Vector<T>::sort ()
 	}
 }
 
+template<typename T>
+int Vector<T>::uniquify ()
+{
+	int old_size = _size;
+	Rank i = 1;
+	while (i < _size)
+	{
+		if (_elem[i] == _elem[i - 1])
+			remove (i);
+		else
+			++i;
+	}
+
+	return old_size - _size;
+}
 #endif

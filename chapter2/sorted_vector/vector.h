@@ -71,6 +71,7 @@ public:
 			return _elem+_size;
 		}
 		void sort ();
+		int uniquify ();
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();

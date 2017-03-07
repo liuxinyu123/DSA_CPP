@@ -154,4 +154,21 @@ void test_sorted_vector ()
 	cout << endl;
 	cout << "The number of disordered is " << iVec1.disordered () << endl;
 
+	for (int i = 10; i < 20; ++i)
+		iVec1.pushBack (i);
+	std::for_each (iVec1.begin (), iVec1.end (), [] (const int e) {cout << e << " ";});
+	cout << endl;
+	cout << "The size of iVec1 is " << iVec1.size () << endl;
+	
+	iVec1.sort ();
+	std::for_each (iVec1.begin (), iVec1.end (), [] (const int e) {cout << e << " ";});
+	cout << endl;
+
+	iVec1.uniquify ();
+	std::for_each (iVec1.begin (), iVec1.end (), [] (const int e) {cout << e << " ";});
+	cout << endl;
+
+	
+
+
 }
