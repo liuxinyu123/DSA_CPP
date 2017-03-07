@@ -7,4 +7,5 @@ void Vector<T>::BubbleSort1(Rank lo,Rank hi)
 	while(lo < Bubble1(lo,hi--));
 }
 
+
 #endif

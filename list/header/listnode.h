@@ -14,7 +14,6 @@ public:
 		ListNode() {}
 		Position(T) InsertAsPred(const T &elem);//前面插入
 		Position(T) InsertAsSucc(const T &elem);//后面插入
-private:
 		ListNode(const T &elem,Position(T) p = nullptr,Position(T) s = nullptr):data_(elem),
 			pred_(p),succ_(s) {}//默认构造函数
 
