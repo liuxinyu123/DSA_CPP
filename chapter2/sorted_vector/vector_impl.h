@@ -239,4 +239,26 @@ int Vector<T>::uniquify ()
 
 	return old_size - _size;
 }
+
+template<typename T>
+int Vector<T>::uniquify_v2 ()
+{
+	int old_size = _size;
+
+	Rank i = 0, j = 1;
+	while (j < _size)
+	{
+		if (_elem[j] == _elem[i])
+			++j;
+		else
+		{
+			_elem[++i] = _elem[j];
+			
+		}
+	}
+
+	_size = ++i;
+
+	return old_size - _size;
+}
 #endif

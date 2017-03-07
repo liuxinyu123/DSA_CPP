@@ -164,7 +164,8 @@ void test_sorted_vector ()
 	std::for_each (iVec1.begin (), iVec1.end (), [] (const int e) {cout << e << " ";});
 	cout << endl;
 
-	iVec1.uniquify ();
+	//iVec1.uniquify ();
+	iVec1.uniquify_v2 ();
 	std::for_each (iVec1.begin (), iVec1.end (), [] (const int e) {cout << e << " ";});
 	cout << endl;
 

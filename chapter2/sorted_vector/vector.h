@@ -72,6 +72,7 @@ public:
 		}
 		void sort ();
 		int uniquify ();
+		int uniquify_v2 ();
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();
