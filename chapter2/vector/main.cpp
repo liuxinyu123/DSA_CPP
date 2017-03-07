@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "vector.h"
+#include "increase.h"
 
 using std::cout;
 using std::endl;
@@ -113,5 +114,20 @@ void test_vector ()
 		cout << strVec[i] << " ";
 	cout << endl;
 	cout << "The size of strVec is " << strVec.size () << endl;
+
+	Vector<int> iVec4;
+	for (int i = 0; i < 20; ++i)
+		iVec4.pushBack (i);
+	
+	for (int i = 0; i < iVec4.size (); ++i)
+		cout << iVec4[i] << " ";
+	cout << endl;
+
+	Increase<int> inc;
+	iVec4.traverse (inc);
+
+	for (int i = 0; i < iVec4.size (); ++i)
+		cout << iVec4[i] << " ";
+	cout << endl;
 
 }

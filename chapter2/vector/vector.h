@@ -7,7 +7,7 @@
 using Rank = int;
 const int Default_Capacity = 10;
 
-template<typename T>
+template<typename T> 
 class Vector
 {
 public:
@@ -59,6 +59,8 @@ public:
 		int deduplicate ();
 		void pushFront (const T &e);
 		T popFront ();
+		template<typename VST>
+		void traverse (VST &visit);
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();
