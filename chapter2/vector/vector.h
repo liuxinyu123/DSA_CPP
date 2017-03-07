@@ -50,6 +50,7 @@ public:
 			check (r, "passed the max rank");
 			_elem[r] = e;
 		}	
+		void unsort (Rank lo, Rank hi);
 private:
 		void check (Rank r, const std::string &s) const;
 		void expand ();

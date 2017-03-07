@@ -1,6 +1,9 @@
 #ifndef _VECTOR_IMPL_H_
 #define _VECTOR_IMPL_H_
 
+#include <algorithm>
+#include <cstdlib>
+
 template<typename T>
 Vector<T>::Vector (const Vector<T> &v)
 	:_capacity (v._capacity), _size (v._size), _elem (new T[_capacity])
@@ -77,6 +80,17 @@ void Vector<T>::shrink ()
 	_elem = new T[_capacity];
 	copyFrom (old_elem, 0, _size);
 	delete [] old_elem;
+}
+
+template<typename T>
+void Vector<T>::unsort (Rank lo, Rank hi)
+{
+	T *v = _elem + lo;
+	for (int i = hi - lo; i > 0; --i)
+	{
+		using std::swap;
+		swap (v[i - 1], v[rand () % i]);
+	}
 }
 
 #endif

@@ -4,6 +4,7 @@
 
 using std::cout;
 using std::endl;
+using std::string;
 
 void test_vector ();
 
@@ -42,6 +43,19 @@ void test_vector ()
 	for (int i = 0; i < iVec3.size (); ++i)
 		cout << iVec3[i] << " ";
 	cout << endl;
+
+	string strArr[] = {"hello", "world", "what", "are", "you", "doing"};
+	Vector<string> strVec (strArr, 0, sizeof (strArr) / sizeof (strArr[0]));
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+
+	strVec.unsort (0, strVec.size ());
+	for (int i = 0; i < strVec.size (); ++i)
+		cout << strVec[i] << " ";
+	cout << endl;
+		
+
 	
 	
 }
