@@ -60,7 +60,7 @@ template<typename T>
 ListNode<T>* List<T>::insertAsFirst (const T &e)
 {
 	++_size;
-	return _header -> insertAsPrev (e);
+	return _header -> insertAsSucc (e);
 }
 
 template<typename T>

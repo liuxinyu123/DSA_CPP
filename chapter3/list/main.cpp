@@ -23,6 +23,9 @@ void test_list ()
 	for (int i = 10; i > 0; --i)
 		iList1.insertAsFirst (i);
 
+	cout << iList1.size () << endl;
+	cout << iList1.first () -> data << endl;
+	cout << iList1.last () -> data << endl;
 	for (int i = 0; i < iList1.size (); ++i)
 		cout << iList1[i] << " ";
 	cout << endl;
