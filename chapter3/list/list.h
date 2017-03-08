@@ -34,4 +34,6 @@ private:
 
 };
 
+
+#include "list_impl.h"
 #endif

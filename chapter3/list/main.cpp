@@ -17,6 +17,7 @@ int main (int argc, char *argv[])
 
 void test_list ()
 {
-	List<T> iList1;
+	List<int> iList1;
+	cout << iList1.size () << endl;
 
 }
