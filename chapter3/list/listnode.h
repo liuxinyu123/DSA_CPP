@@ -20,7 +20,7 @@ ListNode<T>* ListNode<T>::insertAsPrev (const T &d)
 {
 	ListNode<T> *p = new ListNode<T> (d, nullptr, this);
 
-	return this;
+	return p;
 }
 
 template<typename T>

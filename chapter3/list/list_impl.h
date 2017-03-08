@@ -32,7 +32,42 @@ T& List<T>::operator[] (Rank r)
 template<typename T>
 void List<T>::check (Rank r, const std::string &msg) const
 {
-	if (r > _size)
+	if (r >= _size)
 		throw std::out_of_range (msg);	
 }
+
+template<typename T>
+ListNode<T>* List<T>::find (const T &e, ListNode<T> *p, int n) const
+{
+	auto q = p;
+	while (!q && n--)
+	{
+		q = q -> prev;
+		if (e == q -> data)
+			return q;		
+	}
+
+	return nullptr;
+}
+
+template<typename T>
+ListNode<T>* List<T>::find (const T &e) const
+{
+	return find (e, _trailer, _size);
+}
+
+template<typename T>
+ListNode<T>* List<T>::insertAsFirst (const T &e)
+{
+	++_size;
+	return _header -> insertAsPrev (e);
+}
+
+template<typename T>
+ListNode<T>* List<T>::insertAsLast (const T &e)
+{
+	++_size;
+	return _trailer -> insertAsPrev (e);
+}
+
 #endif
