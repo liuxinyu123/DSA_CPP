@@ -23,7 +23,7 @@ T& List<T>::operator[] (Rank r)
 {
 	check (r, "passed the size");
 	ListNode<T> *p = _header -> succ;
-	while (r--)
+	while (0 < r--)
 		p = p -> succ;
 
 	return p -> data;
