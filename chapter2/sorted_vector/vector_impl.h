@@ -216,8 +216,10 @@ void Vector<T>::sort ()
 		for (Rank i = 0; i < sz - 1; ++i)
 		{
 			if (_elem[i] > _elem[i + 1] )
+			{
 				swap (_elem[i], _elem[i + 1]);
-			sorted = false;			
+				sorted = false;			
+			}
 		}
 		--sz;
 	
