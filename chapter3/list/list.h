@@ -17,6 +17,11 @@ public:
 		}		
 		List (const List<T> &l);
 		List& operator= (const List<T> &l);
+		List (const List<T> &l, Rank r, int n);
+		~List ()
+		{
+			destroy ();
+		}
 		T& operator[] (Rank r);
 		int size () const
 		{
@@ -38,12 +43,13 @@ public:
 		ListNode<T>* insertAsLast (const T &e);
 		ListNode<T>* insertBefore (ListNode<T> *p, const T &e);
 		ListNode<T>* insertAfter (ListNode<T> *p, const T &e);
-
+		
 
 private:
 		void init ();
 		void check (Rank r, const std::string &msg) const;
 		void copyNodes (ListNode<T> *p, int n);
+		void destroy ();
 private:
 		int _size;
 		ListNode<T> *_header;

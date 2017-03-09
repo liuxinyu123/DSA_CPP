@@ -1,6 +1,7 @@
 #ifndef _LIST_IMPL_H_
 #define _LIST_IMPL_H_
 
+#include <string>
 #include <stdexcept>
 
 template<typename T>
@@ -106,4 +107,32 @@ List<T>::List (const List<T> &l)
 {
 	copyNodes (l.first (), l.size ());
 }
+
+template<typename T>
+List<T>& List<T>::operator= (const List<T> &l)
+{
+	if (first () != l.first ())
+	{
+		destroy ();
+		copyNodes (l.first (), l.size ());
+	}
+
+	return *this;
+}
+
+template<typename T>
+void List<T>::destroy ()
+{
+	auto p = _header -> succ;
+	auto q = p;
+	if (p != _trailer)
+	{
+		q = p -> succ;
+		delete p;
+		p = q;		
+	}
+
+	delete _header;
+	delete _trailer;
+} 
 #endif

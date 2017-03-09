@@ -2,7 +2,7 @@
 #include <string>
 #include "list.h"
 
-using std::string;
+//using std::string;
 using std::cout;
 using std::endl;
 
@@ -46,5 +46,11 @@ void test_list ()
 	for (int i = 0; i < iList1.size (); ++i)
 		cout << iList1[i] << " ";
 	cout << endl;
+
+	List<int> iList3;
+	iList3 = iList2;
+	//for (int i = 0; i < iList1.size (); ++i)
+		//cout << iList1[i] << " ";
+	//cout << endl;
 
 }
