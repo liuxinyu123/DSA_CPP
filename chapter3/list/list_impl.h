@@ -39,14 +39,15 @@ void List<T>::check (Rank r, const std::string &msg) const
 template<typename T>
 ListNode<T>* List<T>::find (const T &e, ListNode<T> *p, int n) const
 {
+	if (!p)
+		throw std::runtime_error ("segment fault");
 	auto q = p;
-	while (!q && n--)
+	while (0 < n--)
 	{
-		q = q -> prev;
 		if (e == q -> data)
-			return q;		
+			return q;
+		q = q -> prev;
 	}
-
 	return nullptr;
 }
 
@@ -68,6 +69,24 @@ ListNode<T>* List<T>::insertAsLast (const T &e)
 {
 	++_size;
 	return _trailer -> insertAsPrev (e);
+}
+
+template<typename T>
+ListNode<T>* List<T>::insertBefore (ListNode<T> *p, const T &e)
+{
+	if (!p)
+		throw std::runtime_error ("segment fault");
+	++_size;
+	return p -> insertAsPrev (e);
+}
+
+template<typename T>
+ListNode<T>* List<T>::insertAfter (ListNode<T> *p, const T &e)
+{
+	if (!p)
+		throw std::runtime_error ("segment fault");
+	++_size;
+	return p -> insertAsSucc (e);
 }
 
 #endif

@@ -30,4 +30,16 @@ void test_list ()
 		cout << iList1[i] << " ";
 	cout << endl;
 
+	if (!iList1.find (5))
+		cout << "NULL" << endl;
+	iList1.insertAfter (iList1.find (5), 55);
+	for (int i = 0; i < iList1.size (); ++i)
+		cout << iList1[i] << " ";
+	cout << endl;
+
+	iList1.insertBefore (iList1.find (3), 33);
+	for (int i = 0; i < iList1.size (); ++i)
+		cout << iList1[i] << " ";
+	cout << endl;
+
 }
