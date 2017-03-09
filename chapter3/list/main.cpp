@@ -21,7 +21,7 @@ void test_list ()
 	cout << iList1.size () << endl;
 
 	for (int i = 10; i > 0; --i)
-		iList1.insertAsFirst (i);
+		iList1.insertAsLast (i);
 
 	cout << iList1.size () << endl;
 	cout << iList1.first () -> data << endl;

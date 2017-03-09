@@ -19,8 +19,8 @@ template<typename T>
 ListNode<T>* ListNode<T>::insertAsPrev (const T &d)
 {
 	ListNode<T> *p = new ListNode<T> (d, prev, this);
-	this -> prev = p;
 	prev -> succ = p;
+	prev = p;
 
 	return p;
 }
@@ -29,8 +29,8 @@ template<typename T>
 ListNode<T>* ListNode<T>::insertAsSucc (const T &d)
 {
 	ListNode<T> *p = new ListNode<T> (d, this, succ);
-	this -> succ = p;
 	succ -> prev = p;
+	succ = p;
 
 	return p;
 }

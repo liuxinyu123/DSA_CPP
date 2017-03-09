@@ -22,7 +22,7 @@ template<typename T>
 T& List<T>::operator[] (Rank r)
 {
 	check (r, "passed the size");
-	ListNode<T> *p = _header -> succ;
+	ListNode<T> *p = first ();
 	while (0 < r--)
 		p = p -> succ;
 
