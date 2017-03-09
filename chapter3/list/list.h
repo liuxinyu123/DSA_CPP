@@ -2,6 +2,7 @@
 #define _LIST_H_
 
 #include <string>
+#include <stdexcept>
 #include "listnode.h"
 
 using Rank = int;
@@ -17,25 +18,29 @@ public:
 		}		
 		List (const List<T> &l);
 		List& operator= (const List<T> &l);
-		List (const List<T> &l, Rank r, int n);
 		~List ()
 		{
 			destroy ();
 		}
 		T& operator[] (Rank r);
+		const T& operator[] (Rank r) const;
 		int size () const
 		{
 			return _size;
 		}
 		ListNode<T>* first () const
 		{
-			check (0, "passed the max index");
+			check (0, "passed the max size");
 			return _header -> succ;
 		}
 		ListNode<T>* last () const
 		{
-			check (0, "passed the max index");
+			check (0, "passed the max size");
 			return _trailer -> prev;	
+		}
+		bool isEmpty () const
+		{
+			return _size == 0;
 		}
 		ListNode<T>* find (const T &e, ListNode<T>* p, int n) const;
 		ListNode<T>* find (const T &e) const;

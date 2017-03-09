@@ -111,7 +111,7 @@ List<T>::List (const List<T> &l)
 template<typename T>
 List<T>& List<T>::operator= (const List<T> &l)
 {
-	if (first () != l.first ())
+	if (_header != l.first () -> prev)
 	{
 		destroy ();
 		copyNodes (l.first (), l.size ());
@@ -135,4 +135,22 @@ void List<T>::destroy ()
 	delete _header;
 	delete _trailer;
 } 
+
+//template<typename T>
+//List<T>::List (const List<T> &l, Rank r, int n)
+//{
+	//init ();
+	//copyNodes (&l[r], n);
+//}
+
+template<typename T>
+const T& List<T>::operator[] (Rank r) const
+{
+	check (r, "passed the size");
+	ListNode<T> *p = first ();
+	while (0 < r--)
+		p = p -> succ;
+
+	return p -> data;
+}
 #endif
