@@ -48,4 +48,7 @@ void test_stack ()
 	while (!strStack3.isEmpty ())
 		cout << strStack3.pop () << endl;
 	cout << endl;
+	
+	if (strStack3.isEmpty ())
+		cout << "empty " << endl;
 }
