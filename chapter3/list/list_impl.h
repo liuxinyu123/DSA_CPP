@@ -89,4 +89,21 @@ ListNode<T>* List<T>::insertAfter (ListNode<T> *p, const T &e)
 	return p -> insertAsSucc (e);
 }
 
+template<typename T>
+void List<T>::copyNodes (ListNode<T> *p, int n)
+{
+	init ();
+	auto q = p;
+	while (0 < n--)
+	{
+		insertAsLast (q -> data);
+		q = q -> succ;
+	}
+}
+
+template<typename T>
+List<T>::List (const List<T> &l)
+{
+	copyNodes (l.first (), l.size ());
+}
 #endif

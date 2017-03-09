@@ -42,4 +42,9 @@ void test_list ()
 		cout << iList1[i] << " ";
 	cout << endl;
 
+	List<int> iList2 (iList1);
+	for (int i = 0; i < iList1.size (); ++i)
+		cout << iList1[i] << " ";
+	cout << endl;
+
 }

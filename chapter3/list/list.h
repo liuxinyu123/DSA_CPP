@@ -43,6 +43,7 @@ public:
 private:
 		void init ();
 		void check (Rank r, const std::string &msg) const;
+		void copyNodes (ListNode<T> *p, int n);
 private:
 		int _size;
 		ListNode<T> *_header;
