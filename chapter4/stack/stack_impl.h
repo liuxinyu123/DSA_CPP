@@ -17,8 +17,7 @@ template<typename T>
 Stack<T>::Stack (const Stack<T> &s)
 	:_capacity (s._capacity), _size (s._size), _data (new T[_capacity]) 
 {
-	for (int i = 0; i < _size; ++i)
-		_data[i] = s._data[i];
+	copyFrom (s);
 }
 
 template<typename T>
@@ -31,8 +30,7 @@ Stack<T>& Stack<T>::operator= (const Stack<T> &s)
 		_size = s._size;
 		_data = new T[_capacity];
 
-		for (int i = 0; i < s.size (); ++i)
-			_data[i] = s._data[i];
+		copyFrom (s);
 	}
 
 	return *this;
@@ -50,4 +48,24 @@ bool Stack<T>::operator!= (const Stack<T> &s)
 	return !(*this == s);
 }
 
+template<typename T>
+void Stack<T>::shrink ()
+{
+	if (4 * _size < _capacity)
+	{
+		_capacity /= 2;
+		auto old_data = _data;
+		_data = new T[_capacity];
+		
+		for (int i = 0; i < _size; ++i)
+			_data[i] = old_data [i];
+	}
+}
+
+template<typename T>
+void Stack<T>::copyFrom (const Stack<T> &s)
+{
+	for (int i = 0; i < s.size (); ++i)
+		_data[i] = s._data[i];
+}
 #endif

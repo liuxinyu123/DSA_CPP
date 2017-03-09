@@ -34,6 +34,7 @@ public:
 		}
 		T pop ()
 		{
+			shrink ();
 			return _data[--_size];
 		}
 		T top () const
@@ -51,6 +52,8 @@ private:
 		{
 			return _size == _capacity;
 		}
+		void shrink ();
+		void copyFrom (const Stack<T> &s);
 private:
 		int _capacity;
 		int _size;
