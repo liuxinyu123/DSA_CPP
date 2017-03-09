@@ -26,15 +26,26 @@ void test_stack ()
 	strStack1.push ("sorry");
 
 	Stack<string> strStack2 (strStack1);
-	//Stack<string> strStack3;
-	//strStack3 = strStack2;
+	Stack<string> strStack3;
+	strStack3 = strStack2;
 	
 
 	cout << strStack1.top () << endl;
 	while (!strStack1.isEmpty ())
 		cout << strStack1.pop () << endl;
+	cout << endl;
 
 	while (!strStack2.isEmpty ())
 		cout << strStack2.pop () << endl;
+	cout << endl;
 
+	while (!strStack3.isEmpty ())
+		cout << strStack3.pop () << endl;
+	cout << endl;
+
+	for (int i = 0; i < 20; ++i)
+		strStack3.push ("hello");
+	while (!strStack3.isEmpty ())
+		cout << strStack3.pop () << endl;
+	cout << endl;
 }

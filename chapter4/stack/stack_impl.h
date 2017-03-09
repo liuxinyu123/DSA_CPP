@@ -10,7 +10,7 @@ void Stack<T>::expand ()
 
 	for (int i = 0; i < _size; ++i)
 		_data[i] = old_data[i];
-	delete old_data;
+	delete [] old_data;
 }
 
 template<typename T>
@@ -26,10 +26,13 @@ Stack<T>& Stack<T>::operator= (const Stack<T> &s)
 {
 	if (*this != s)
 	{
-		delete _data;
+		delete [] _data;
 		_capacity = s._capacity;
 		_size = s._size;
 		_data = new T[_capacity];
+
+		for (int i = 0; i < s.size (); ++i)
+			_data[i] = s._data[i];
 	}
 
 	return *this;
