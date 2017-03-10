@@ -25,6 +25,7 @@ int main (int argc, char *argv[])
 	strVec.push_back ("(a+b)*c+(d+e)/(s+w)");
 	strVec.push_back ("((a+b))*c+(()())d+e)");
 	strVec.push_back ("sorry");
+	
 
 	test_recursion (strVec);
 
