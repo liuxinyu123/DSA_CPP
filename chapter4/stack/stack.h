@@ -3,14 +3,14 @@
 
 #include <stdexcept>
 
-const int DefaultSize = 10;
+const int DefaultCapacity = 10;
 
 template<typename T>
 class Stack
 {
 
 public:
-		Stack (int cap = DefaultSize)
+		Stack (int cap = DefaultCapacity)
 			:_capacity (cap), _size (0), _data (new T[_capacity])	{}
 		Stack (const Stack &s);
 		Stack& operator= (const Stack &s);
@@ -44,6 +44,10 @@ public:
 			return _data [_size - 1];
 		}
 
+		int capacity () const
+		{
+			return _capacity;
+		}
 		bool operator== (const Stack<T> &s);
 		bool operator!= (const Stack<T> &s);
 private:

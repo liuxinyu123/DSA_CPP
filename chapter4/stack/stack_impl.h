@@ -51,9 +51,10 @@ bool Stack<T>::operator!= (const Stack<T> &s)
 template<typename T>
 void Stack<T>::shrink ()
 {
-	if (4 * _size < _capacity)
+	if (5 * _size < _capacity)
 	{
 		_capacity /= 2;
+		_capacity = (_capacity < DefaultCapacity) ? DefaultCapacity : _capacity;
 		auto old_data = _data;
 		_data = new T[_capacity];
 		
