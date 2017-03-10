@@ -23,6 +23,7 @@ int main (int argc, char *argv[])
 	strVec.push_back ("(a+b)*c+(d+e))");
 	strVec.push_back ("(a+b)*c+(d+e)/(s+w)");
 	strVec.push_back ("((a+b))*c+(()())d+e)");
+	strVec.push_back ("sorry");
 
 	test_recursion (strVec);
 	
@@ -33,13 +34,14 @@ void test_recursion (vector<string> &strVec)
 {
 	for (const auto &e : strVec)
 	{
-		if (bracket_parse_recursion (e, 0, e.size ()))
+		if (bracket_parse_recursion (e, 0, e.size () - 1))
 			cout << "match ok" << endl;
 		else
 			cout << "not match" << endl;
 	}
 }
 
+//lo 和 hi 都包含， 表达式为s[lo, hi]
 void trim (const string &s, int &lo, int &hi)//	确定两边都是括号，如果没有lo > hi
 {
 	while ((lo <= hi) && (s[lo] != '(') && (s[lo] != ')'))
@@ -68,13 +70,16 @@ bool bracket_parse_recursion (const string &s, int lo, int hi)
 	trim (s, lo, hi);
 	if (lo > hi)//表示没有括号
 		return true;
-	if ((s[lo] != '(') || (s[hi] != ')'))
+
+	if ((s[lo] == ')') || (s[hi] == '('))//有括号但是括号是反的
 		return false;
+
 	int mid = divide (s, lo, hi);
 
-	if (mid > hi)//括号不平衡
+	if (mid > hi)//找不到括号不平衡的点
 		return false;
-	return bracket_parse_recursion (s, lo+1, mid - 1) && bracket_parse_recursion (s, mid + 1, hi - 1);
+
+	return bracket_parse_recursion (s, lo+1, mid - 1) && bracket_parse_recursion (s, mid + 1, hi);
 
 }
 
