@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "stack.h"
+
 
 using std::cout;
 using std::endl;
