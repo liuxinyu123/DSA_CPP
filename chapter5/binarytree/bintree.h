@@ -31,20 +31,28 @@ public:
 
 		BinTreeNode<T>* insertAsRoot (const T &e)
 		{
-			++_size;
-			return  new BinTreeNode<T> (e, nullptr, _root);	
+			_size = 1;
+			_root = new BinTreeNode<T> (e);
+
+			return _root;
 		}
 
 		BinTreeNode<T>* insertAsLC (BinTreeNode<T> *n, const T &e)
 		{
 			++_size;
-			return n -> insertAsLChild (e);	 
+			n -> insertAsLC (e);	 
+			updateHeightAbove (n);
+
+			return n -> lChild;
 		}
 
 		BinTreeNode<T>* insertAsRC (BinTreeNode<T> *n, const T &e)
 		{
 			++_size;
-			return n -> insertAsRChild (e);
+			n -> insertAsRC (e);
+			updateHeightAbove (n);
+
+			return n -> rChild;
 		}
 	
 		BinTreeNode<T>* attachAsLC (BinTreeNode<T> *n, BinTree<T> &t)

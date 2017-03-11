@@ -21,8 +21,7 @@ void test_bintree ()
 	BinTree<int> iTree;
 
 	iTree.insertAsRoot (4);
-	iTree.insertAsRoot (5);
-	iTree.insertAsRoot (6);
+	//iTree.insertAsLC (iTree.root (), 5);
 	
 	cout << iTree.size () << endl;
 
