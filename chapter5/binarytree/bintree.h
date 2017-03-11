@@ -90,7 +90,11 @@ public:
 				p = p -> parent;
 			}
 		}
-
+		
+		int remove (BinTreeNode<T> *n)
+		{
+			
+		}
 
 
 

@@ -104,7 +104,7 @@ struct BinTreeNode
 	{
 		return (parent -> isLChild ()) ? parent -> parent -> rChild : parent -> parent -> lChild;
 	}
-
+	
 };
 
 #endif
