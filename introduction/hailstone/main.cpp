@@ -8,13 +8,20 @@ using std::set;
 
 set<int> hailStone (int n);
 
+
 int main (int argc, char *argv[])
 {
-	set<int> iSet = hailStone (5);
+	set<int> iSet;
+   
+	for (int i = 1; i < 50; ++i)
+	{
+		iSet = hailStone (i);
 
-	for (const int e : iSet)
-		cout << e << " ";
-	cout << endl;
+		cout << i << " : " << endl;
+		for (const int e : iSet)
+			cout << e << " ";
+		cout << endl;
+	}
 
 	return 0;
 }
