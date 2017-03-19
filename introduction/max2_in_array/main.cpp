@@ -30,6 +30,9 @@ int main (int argc, char *argv[])
 	max2_in_array_B (iArr, 0, len, x1, x2);
 	cout << "First max is: " << iArr[x1] << " Second max is: " << iArr[x2] << endl;
 
+	max2_in_array_B (iArr, 0, len, x1, x2);
+	cout << "First max is: " << iArr[x1] << " Second max is: " << iArr[x2] << endl;
+
 	return 0;
 }
 
@@ -83,4 +86,51 @@ void max2_in_array_B (int *arr, int lo, int hi, int &x1, int &x2)
 	}
 }
 
+void max2_in_array_C (int *arr, int lo, int hi, int &x1, int &x2)
+{
+	if (lo + 1 == hi)//只有一个元素
+	{
+		x1 = lo;
+		x2 = lo;
+		return;
+	}	
 
+	if (lo + 2 == hi)//只有两个元素
+	{
+		x1 = lo;
+		x2 = lo + 1;
+
+		if (arr[x1] < arr[x2])
+			swap (x1, x2);
+	}
+
+	int mid = (lo + hi) / 2;
+
+	int x1L = lo;
+	int x2L = lo;
+	max2_in_array_C (arr, lo, mid, x1L, x2L);
+
+	int x1R = mid;
+	int x2R = mid;
+	max2_in_array_C (arr, mid, hi, x1R, x2R);
+
+	if (arr[x1L] > arr[x2L])
+	{
+		x1 = x1L;
+		
+		if (arr[x1R] > arr[x2L])
+			x2 = x1R;
+		else
+			x2 = x2L;
+	}
+	else
+	{
+		x1 = x2L;
+
+		if (arr[x1L] > arr[x2R])
+			x2 = x1L;
+		else
+			x2 = x2R;
+	}
+
+}
