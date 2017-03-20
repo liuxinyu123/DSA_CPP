@@ -14,7 +14,7 @@ int main (int argc, char *argv[])
 	int sz1 = sizeof (s1) / sizeof (char);
 	int sz2 = sizeof (s2) / sizeof (char);
 
-	cout << sz1 << endl;
+	//cout << sz1 << endl;
 	cout << lcs (s1, sz1, s2, sz2) << endl;
 
 	return 0;
